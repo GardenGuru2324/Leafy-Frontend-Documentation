@@ -9,6 +9,4 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'leafy-frontend-documentation';
-}
+export class AppComponent {}

@@ -1,11 +1,88 @@
-<main class="h-screen flex items-center justify-center flex-col p-4 gap-5">
-  <div>
-    <h1 class="font-bold text-xl text-center mb-2">Leafy documentation</h1>
-    <p class="text-center">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fugiat
-      id repellat quidem. Quaerat reiciendis laudantium numquam nisi veniam,
-      tempore, sit molestias alias eveniet deleniti ullam labore autem nobis et?
+<header>
+  <div class="container">
+    <h1>Leafy API Documentatie</h1>
+    <p>
+      Een overzicht van de beschikbare API-endpoints voor het beheren en
+      filteren van planten.
     </p>
   </div>
-  <button mat-flat-button>Button</button>
+</header>
+
+<main>
+  <div class="container">
+    <section>
+      <h2>GET /plants</h2>
+      <p>
+        Haal een lijst met planten op. Gebruik filters om zoekresultaten te
+        verfijnen.
+      </p>
+
+      <h3>Query Parameters:</h3>
+      <ul>
+        <li>
+          <strong>zoekterm</strong>: Zoek op naam van de plant (gedeeltelijke
+          overeenkomsten). <em>Voorbeeld: </em>
+          <strong>/plants?search=ficus</strong>
+        </li>
+        <li>
+          <strong>type</strong>: Filter op planttype (bijv. "woonkamer",
+          "buiten"). <em>Voorbeeld: </em>
+          <strong>/plants?type=woonkamer</strong>
+        </li>
+        <li>
+          <strong>minHoogte</strong>: Minimale hoogte in cm.
+          <em>Voorbeeld: </em> <strong>/plants?minHeigt=20</strong>
+        </li>
+        <li>
+          <strong>maxHoogte</strong>: Maximale hoogte in cm. <em>Voorbeeld: </em
+          ><strong>/plants?maxHeigt=35</strong>
+        </li>
+        <li>
+          <strong>pagina</strong>: Specificeer de pagina van de resultaten.
+          <em>Voorbeeld: </em> <strong>/plants?maxHeigt=35</strong>
+        </li>
+        <li>
+          <strong>limiet</strong>: Aantal resultaten per pagina.
+          <em>Voorbeeld: </em> <strong>/plants?limit=25</strong>
+        </li>
+      </ul>
+
+      <h3>Mogelijke combinaties:</h3>
+      <p>
+        <em>Voorbeeld: </em>
+        <strong>/plants?type=woonkamer&minHeigt=20&maxHeigt=35</strong>
+      </p>
+    </section>
+
+    <section>
+      <h2>Paginatie en Filters Combineren</h2>
+      <p>
+        Combineer filters en paginatie om specifieke resultaten op te halen.
+      </p>
+      <p>
+        <em>Voorbeeld: </em>
+        <strong
+          >/plants?type=eetbaar&minHeigt=10&maxHeigt=50&page=3&limit=20</strong
+        >
+      </p>
+    </section>
+
+    <section>
+      <h2>GET /planten/id</h2>
+      <p>Haal een specifieke plant op via het unieke ID.</p>
+      <p>
+        <em>Voorbeeld: </em> <strong>/plants/60b6c5e5f25b9c16c8d7a2d3</strong>
+      </p>
+    </section>
+
+    <div class="flex items-center justify-center">
+      <button mat-flat-button style="background-color: green">Leafy API</button>
+    </div>
+  </div>
 </main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Laefy API Documentatie. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
